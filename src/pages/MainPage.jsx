@@ -3,7 +3,9 @@ import Bckg from "../components/background/Bckg";
 import Menu from "../components/nav/Menu";
 import DashBoard from "../features/dashboard/DashBoard";
 import styled from "styled-components";
+import useTitle from "../hooks/useTitle";
 const MainPage = () => {
+  useTitle("Dashboard");
   return (
     <Bckg>
       <MainWrapper>

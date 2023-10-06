@@ -3,8 +3,10 @@ import Bckg from "../components/background/Bckg";
 import Menu from "../components/nav/Menu";
 import styled from "styled-components";
 import Board from "../features/board/Board";
+import useTitle from "../hooks/useTitle";
 
 const BoardPage = () => {
+  useTitle("Board");
   return (
     <Bckg>
       <MainWrapper>

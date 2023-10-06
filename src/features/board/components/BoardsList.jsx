@@ -4,6 +4,7 @@ import { useGetAllUserBoardsQuery } from "../boardApiSlice";
 import { Link } from "react-router-dom";
 import ErorrPage from "../../../components/ErorrPage";
 import Loading from "../../../components/Loading";
+
 const BoardsList = () => {
   const {
     data: boards,
@@ -23,6 +24,7 @@ const BoardsList = () => {
       {boards &&
         boards.ids.map((boardId) => {
           const board = boards.entities[boardId];
+
           return (
             <BoardsListContainer key={boardId}>
               <BoardLink to={`/board/${board.id}`}>{board.title}</BoardLink>

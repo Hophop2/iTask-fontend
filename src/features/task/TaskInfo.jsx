@@ -25,8 +25,10 @@ import { useNavigate, useParams } from "react-router";
 import { useGetTaskByIdQuery } from "./taskApiSlice";
 import Loading from "../../components/Loading";
 import ErorrPage from "../../components/ErorrPage";
+import useTitle from "../../hooks/useTitle";
 
 const TaskInfo = () => {
+  useTitle("Task");
   const { taskId } = useParams();
 
   const navigate = useNavigate();

@@ -16,9 +16,11 @@ import { useNavigate } from "react-router";
 import usePersist from "../hooks/usePersist";
 import toast from "react-hot-toast";
 import Loading from "../components/Loading";
+import useTitle from "../hooks/useTitle";
 
 const LoginPage = () => {
   const userRef = useRef();
+  useTitle("iTask");
 
   const [loginData, setLoginData] = useState({
     username: "",

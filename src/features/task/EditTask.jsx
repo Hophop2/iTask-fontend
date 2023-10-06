@@ -20,10 +20,12 @@ import Loading from "../../components/Loading";
 import Input from "../../components/inputs/Input";
 import styled from "styled-components";
 import ErorrPage from "../../components/ErorrPage";
+import useTitle from "../../hooks/useTitle";
 
 const EditTask = () => {
   const statusArray = ["To Do", "In Progress", "Done"];
   const priorityArray = ["Low", "Normal", "High"];
+  useTitle("Edit Task");
 
   const [updateTask] = useUpdateTaskMutation();
   const { taskId } = useParams();
