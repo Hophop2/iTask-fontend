@@ -20,7 +20,7 @@ export default Menu;
 const S = {
   Container: styled.div`
     width: 18rem;
-    min-height: 100%;
+    height: 100%;
 
     border-radius: 2.5rem;
     display: flex;

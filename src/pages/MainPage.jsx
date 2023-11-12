@@ -20,7 +20,10 @@ export default MainPage;
 const S = {
   MainWrapper: styled.div`
     width: 100%;
-    min-height: 100%;
+
+    min-height: 95vh;
     display: flex;
+    justify-content: center;
+    align-items: center;
   `,
 };

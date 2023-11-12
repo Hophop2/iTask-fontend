@@ -21,7 +21,6 @@ const baseQueryWithReauth = async (args, api, extraOptions) => {
 
   let result = await baseQuery(args, api, extraOptions);
 
-  // If you want, handle other status codes, too
   if (result?.error?.status === 403) {
     console.log("sending refresh token");
 
