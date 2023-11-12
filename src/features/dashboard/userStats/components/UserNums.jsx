@@ -1,44 +1,32 @@
 import React from "react";
-
-import {
-  Square,
-  Num,
-  TasksStatus,
-  TopWrapper,
-  TopBox,
-  Numberr,
-  SLine,
-  Line,
-  BotWrapper,
-  SubText,
-} from "../OverallStyle";
+import { S } from "../OverallStyle";
 
 const UserNums = ({ userData, isLoading }) => {
   if (isLoading) return <p>Loading...</p>;
   const { taskCounts, userStats } = userData;
   return (
     <>
-      <TopWrapper>
-        <TopBox>
-          <Numberr>{userStats.createdTask}</Numberr>
-          <SubText>Tasks created</SubText>
-        </TopBox>
-        <SLine />
-        <TopBox>
-          <Numberr>{userStats.deletedTask}</Numberr>
-          <SubText>Tasks deleted</SubText>
-        </TopBox>
-      </TopWrapper>
+      <S.TopWrapper>
+        <S.TopBox>
+          <S.Numberr>{userStats.createdTask}</S.Numberr>
+          <S.SubText>Tasks created</S.SubText>
+        </S.TopBox>
+        <S.SLine />
+        <S.TopBox>
+          <S.Numberr>{userStats.deletedTask}</S.Numberr>
+          <S.SubText>Tasks deleted</S.SubText>
+        </S.TopBox>
+      </S.TopWrapper>
 
-      <Line />
-      <BotWrapper>
+      <S.Line />
+      <S.BotWrapper>
         {taskCounts.map((item, i) => (
-          <Square key={i}>
-            <Num>{item.count}</Num>
-            <TasksStatus>{item.name}</TasksStatus>
-          </Square>
+          <S.Square key={i}>
+            <S.Num>{item.count}</S.Num>
+            <S.TasksStatus>{item.name}</S.TasksStatus>
+          </S.Square>
         ))}
-      </BotWrapper>
+      </S.BotWrapper>
     </>
   );
 };

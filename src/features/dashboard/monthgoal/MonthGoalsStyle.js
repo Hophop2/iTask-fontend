@@ -1,8 +1,9 @@
 import styled from "styled-components";
 
+export const S = {};
 export const Box = styled.div`
-  width: 310px;
-  height: 310px;
+  width: 280px;
+  height: 280px;
   padding: 20px 20px 20px 20px;
   background: ${(props) => props.theme.colors.linearLight};
   border-radius: 40px;

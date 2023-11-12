@@ -13,7 +13,7 @@ const ListMonthGoals = ({ monthGoals, refetch }) => {
 
   useEffect(() => {
     setGoalList(monthGoals);
-  }, []);
+  }, [monthGoals]);
 
   const [UpdateMonthGoal] = useUpdateMonthGoalMutation();
 

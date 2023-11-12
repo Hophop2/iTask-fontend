@@ -8,19 +8,21 @@ import useTitle from "../hooks/useTitle";
 const BoardPage = () => {
   useTitle("Board");
   return (
-    <Bckg>
-      <MainWrapper>
+    <Bckg logheight={"100vh"}>
+      <S.MainWrapper>
         <Menu activeNum={0} />
         <Board />
-      </MainWrapper>
+      </S.MainWrapper>
     </Bckg>
   );
 };
 
 export default BoardPage;
 
-const MainWrapper = styled.div`
-  width: 100%;
-  height: 100%;
-  display: flex;
-`;
+const S = {
+  MainWrapper: styled.div`
+    width: 100%;
+    height: 100%;
+    display: flex;
+  `,
+};

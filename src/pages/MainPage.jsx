@@ -8,18 +8,19 @@ const MainPage = () => {
   useTitle("Dashboard");
   return (
     <Bckg>
-      <MainWrapper>
+      <S.MainWrapper>
         <Menu activeNum={2} />
         <DashBoard />
-      </MainWrapper>
+      </S.MainWrapper>
     </Bckg>
   );
 };
 
 export default MainPage;
-
-const MainWrapper = styled.div`
-  width: 100%;
-  height: 100%;
-  display: flex;
-`;
+const S = {
+  MainWrapper: styled.div`
+    width: 100%;
+    min-height: 100%;
+    display: flex;
+  `,
+};

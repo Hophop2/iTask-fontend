@@ -1,47 +1,75 @@
-import { faPenToSquare, faPlus } from "@fortawesome/free-solid-svg-icons";
+import {
+  faEllipsisVertical,
+  faPenToSquare,
+  faTrash,
+} from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import React from "react";
+import React, { useEffect } from "react";
+import { useNavigate } from "react-router";
 import { styled } from "styled-components";
+import { useDeleteTaskMutation } from "../../../task/taskApiSlice";
+import toast from "react-hot-toast";
 
-const EditChoiceList = ({ handleOptionSelect }) => {
+const ChoiceList = ({ taskId, refetch }) => {
+  const [deleteTask, { isSuccess, isError, error }] = useDeleteTaskMutation();
+
+  const navigate = useNavigate();
+
+  const handleEditClick = (e) => {
+    e.stopPropagation();
+    navigate(`edit/${taskId}`);
+  };
+
+  const handleDeleteTask = async (e) => {
+    e.stopPropagation();
+    await deleteTask({ id: taskId });
+    refetch();
+  };
+  useEffect(() => {
+    if (isSuccess) {
+      toast.success("Task deleted successfully!");
+    } else if (isError || error) {
+      toast.error("Error deleting task. Please try again.");
+    }
+  }, [isSuccess, isError]);
+
   return (
     <S.ListWrapper>
       <ListContainer>
         <S.ListBox>
-          <S.EditBox onClick={() => handleOptionSelect("edit")}>
+          <S.EditBox onClick={(e) => handleEditClick(e)}>
             <p>Edit</p>
             <FontAwesomeIcon icon={faPenToSquare} />
           </S.EditBox>
-          <S.AddBox onClick={() => handleOptionSelect("add")}>
-            <p>Add</p>
-            <FontAwesomeIcon icon={faPlus} />
+          <S.AddBox onClick={(e) => handleDeleteTask(e)}>
+            <p>Delete</p>
+            <FontAwesomeIcon icon={faTrash} style={{ marginRight: "5px" }} />
           </S.AddBox>
         </S.ListBox>
         <S.Triangle />
       </ListContainer>
 
-      <FontAwesomeIcon icon={faPenToSquare} size="xl" />
+      <FontAwesomeIcon icon={faEllipsisVertical} />
     </S.ListWrapper>
   );
 };
 
-export default EditChoiceList;
+export default ChoiceList;
 
 const ListContainer = styled.div`
   display: none;
 `;
-
 const S = {
   ListBox: styled.div`
     width: 85px;
     height: 65px;
+    z-index: 100;
 
     background-color: #282929;
     border-radius: 12px;
     position: absolute;
-    top: -300%;
-    left: -130%;
-
+    top: -320%;
+    right: -800%;
     color: white;
     font-size: 14px;
   `,
@@ -58,8 +86,8 @@ const S = {
     border-left: 10px solid transparent;
     border-right: 10px solid transparent;
     position: absolute;
-    top: -30%;
-    left: 7%;
+    top: -40%;
+    right: -170%;
 
     border-top: 10px solid #282929;
   `,
@@ -80,6 +108,7 @@ const S = {
     }
   `,
   AddBox: styled.div`
+    width: 100%;
     height: 50%;
     display: flex;
     justify-content: space-around;

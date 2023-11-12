@@ -1,16 +1,5 @@
 import React, { useEffect, useState } from "react";
-import {
-  DetailBox,
-  DetailP,
-  DetailSpan,
-  DetailsWrapper,
-  InfoBox,
-  LeftBox,
-  Loc,
-  RightBox,
-  Temp,
-  WeatherImg,
-} from "./weatherStyle";
+import { S } from "./weatherStyle";
 import Sun from "../../../img/weather img/sunny.png";
 import Clouds from "../../../img/weather img/cloudy.png";
 import Rain from "../../../img/weather img/rainy.png";
@@ -65,30 +54,30 @@ const CurrentWeather = ({ weatherData }) => {
 
   return (
     <>
-      <LeftBox>
-        <WeatherImg src={weatherImg} alt="weather" />
-        <InfoBox>
-          <Temp>{temp}°C</Temp>
-          <Loc>{name}</Loc>
-        </InfoBox>
-      </LeftBox>
+      <S.LeftBox>
+        <S.WeatherImg src={weatherImg} alt="weather" />
+        <S.InfoBox>
+          <S.Temp>{temp}°C</S.Temp>
+          <S.Loc>{name}</S.Loc>
+        </S.InfoBox>
+      </S.LeftBox>
 
-      <RightBox>
-        <DetailsWrapper>
-          <DetailBox>
-            <DetailP>{feelsLike}°C</DetailP>
-            <DetailSpan>Feels like</DetailSpan>
-          </DetailBox>
-          <DetailBox>
-            <DetailP>{winds}km/h</DetailP>
-            <DetailSpan>Winds</DetailSpan>
-          </DetailBox>
-          <DetailBox>
-            <DetailP>{humidity}</DetailP>
-            <DetailSpan>Humidity</DetailSpan>
-          </DetailBox>
-        </DetailsWrapper>
-      </RightBox>
+      <S.RightBox>
+        <S.DetailsWrapper>
+          <S.DetailBox>
+            <S.DetailP>{feelsLike}°C</S.DetailP>
+            <S.DetailSpan>Feels like</S.DetailSpan>
+          </S.DetailBox>
+          <S.DetailBox>
+            <S.DetailP>{winds}km/h</S.DetailP>
+            <S.DetailSpan>Winds</S.DetailSpan>
+          </S.DetailBox>
+          <S.DetailBox>
+            <S.DetailP>{humidity}</S.DetailP>
+            <S.DetailSpan>Humidity</S.DetailSpan>
+          </S.DetailBox>
+        </S.DetailsWrapper>
+      </S.RightBox>
     </>
   );
 };

@@ -14,14 +14,16 @@ export const UserBox = styled.div`
 `;
 export const TopContainer = styled.div`
   width: 100%;
+  height: 100%;
+
   display: flex;
   flex-direction: column;
   justify-content: center;
-  gap: 2rem;
+  gap: 1rem;
 `;
 
 export const TopWrapper = styled.div`
-  height: 80%;
+  height: 70%;
   display: flex;
 
   justify-content: space-around;

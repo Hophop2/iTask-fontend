@@ -24,8 +24,9 @@ const SearchWeather = ({ onSearchChange }) => {
     setSearch(searchData);
     onSearchChange(searchData);
   };
+
   return (
-    <Container>
+    <S.Container>
       <AsyncPaginate
         placeholder="Search for city"
         debounceTimeout={600}
@@ -33,19 +34,22 @@ const SearchWeather = ({ onSearchChange }) => {
         onChange={handleOnChange}
         loadOptions={loadOptions}
         className="location-input"
+        isSearchable={true}
       />
-    </Container>
+    </S.Container>
   );
 };
 
 export default SearchWeather;
 
-const Container = styled.div`
-  width: 80%;
-  display: flex;
-  justify-content: center;
+const S = {
+  Container: styled.div`
+    width: 80%;
+    display: flex;
+    justify-content: center;
 
-  .location-input {
-    width: 100%;
-  }
-`;
+    .location-input {
+      width: 100%;
+    }
+  `,
+};

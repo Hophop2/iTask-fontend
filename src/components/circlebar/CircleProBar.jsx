@@ -7,7 +7,7 @@ const CircleProBar = ({ allNum, numOfDone }) => {
   const dashArray = r * Math.PI * 2;
   const dashOffset = dashArray - (dashArray * percentage) / 100;
   return (
-    <Circle>
+    <S.Circle>
       <svg width="50" height="50" viewBox={`0 0 ${cir} ${cir}`}>
         <circle
           cx={cir / 2}
@@ -38,27 +38,29 @@ const CircleProBar = ({ allNum, numOfDone }) => {
           {numOfDone}/{allNum}
         </text>
       </svg>
-    </Circle>
+    </S.Circle>
   );
 };
 
 export default CircleProBar;
 
-const Circle = styled.div`
-  .circle-bckg {
-    fill: none;
-    stroke: #c2c2c2;
-  }
+const S = {
+  Circle: styled.div`
+    .circle-bckg {
+      fill: none;
+      stroke: #c2c2c2;
+    }
 
-  .circle-progress {
-    fill: none;
-    stroke: black;
-    stroke-linecap: round;
-    stroke-linejoin: round;
-  }
+    .circle-progress {
+      fill: none;
+      stroke: black;
+      stroke-linecap: round;
+      stroke-linejoin: round;
+    }
 
-  .circle-text {
-    font-size: 2.5rem;
-    font-family: "MyFontBold", sans-serif;
-  }
-`;
+    .circle-text {
+      font-size: 2.5rem;
+      font-family: "MyFontBold", sans-serif;
+    }
+  `,
+};

@@ -85,8 +85,12 @@ export const ContentBox = styled.div`
   padding: 1rem;
   align-self: center;
 
+  overflow-y: auto;
   background: linear-gradient(190deg, #d9d9d9 0%, rgba(217, 217, 217, 0) 100%);
   box-shadow: 4px 4px 4px 0px rgba(0, 0, 0, 0.25);
+  & > p {
+    word-wrap: break-word;
+  }
 `;
 
 export const InfoWrapper = styled.div`

@@ -12,9 +12,10 @@ import { faPlus } from "@fortawesome/free-solid-svg-icons";
 
 import { useParams } from "react-router";
 
-import TaskFilter from "./components/TaskFilter";
+import TaskFilter from "./components/boardtask/TaskFilter";
 import { useGetAllUserTasksQuery } from "../task/taskApiSlice";
 import ErorrPage from "../../components/ErorrPage";
+import Loading from "../../components/Loading";
 
 const Board = () => {
   const { boardId } = useParams();
@@ -22,7 +23,6 @@ const Board = () => {
   const {
     data: tasks,
     isLoading,
-    isSuccess,
     refetch,
     isError,
     error,
@@ -31,7 +31,7 @@ const Board = () => {
     refetchOnMountOrArgChange: true,
     refetchOnSuccess: true,
   });
-  if (isLoading) return <p>Loading...</p>;
+  if (isLoading) return <Loading wrapHeight={"100%"} />;
   if (isError || error) return <ErorrPage error={error} />;
 
   const taskList = tasks.ids.map((id) => {

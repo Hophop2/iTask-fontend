@@ -23,7 +23,7 @@ const AddMonthGoals = ({ handleOptionSelect, refetch, disableBack }) => {
 
   const { userId } = useAuth();
 
-  const [addNewMonthGoal, { isSuccess, isError, error }] =
+  const [addNewMonthGoal, { isLoading, isError, error }] =
     useAddNewMonthGoalMutation();
 
   useEffect(() => {
@@ -36,12 +36,7 @@ const AddMonthGoals = ({ handleOptionSelect, refetch, disableBack }) => {
         },
       ]);
     }
-  }, [isError, error]);
-
-  if (isSuccess) {
-    handleOptionSelect("list");
-    refetch();
-  }
+  }, [isError, error, handleOptionSelect, refetch]);
 
   const onGoalListChanged = (e, i) => {
     const { name, value } = e.target;
@@ -63,21 +58,30 @@ const AddMonthGoals = ({ handleOptionSelect, refetch, disableBack }) => {
   const handleSendMonthGoals = async (e) => {
     e.preventDefault();
 
-    const goalsToSend = goalList.map((item) => ({
-      user: userId,
-      title: item.title,
-      completed: item.completed,
-    }));
+    const isTitleTooLong = goalList.some((item) => item.title.length > 16);
 
-    await addNewMonthGoal({ goals: goalsToSend });
+    if (isTitleTooLong) {
+      toast.error("One or more titles are too long (more than 16 characters).");
+    } else {
+      const goalsToSend = goalList.map((item) => ({
+        user: userId,
+        title: item.title,
+        completed: item.completed,
+      }));
+
+      await addNewMonthGoal({ goals: goalsToSend });
+      refetch();
+      handleOptionSelect("list");
+    }
   };
+  if (isLoading) return <p>Loading...</p>;
 
   return (
     <MonthTaskWrapper>
       <form onSubmit={handleSendMonthGoals}>
         {goalList.map((item, i) => {
           return (
-            <>
+            <React.Fragment key={i}>
               <MonthTask>
                 {goalList.length !== 1 && (
                   <FontAwesomeIcon
@@ -101,7 +105,7 @@ const AddMonthGoals = ({ handleOptionSelect, refetch, disableBack }) => {
                 />
               </MonthTask>
               <br />
-            </>
+            </React.Fragment>
           );
         })}
         <div className="row">

@@ -1,14 +1,6 @@
 import React from "react";
-import {
-  BotContainer,
-  CircleBox,
-  DateBox,
-  IconWrapper,
-  TaskContainer,
-  TaskTitle,
-  TopContainer,
-} from "./TaskStyle";
-import CircleProBar from "../../../components/circlebar/CircleProBar";
+import { S } from "../TaskStyle";
+import CircleProBar from "../../../../components/circlebar/CircleProBar";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faFlag } from "@fortawesome/free-solid-svg-icons";
 import { useNavigate, useParams } from "react-router";
@@ -33,13 +25,13 @@ const Task = ({ tasks, refetch }) => {
       return numOfDone;
     };
     return (
-      <TaskContainer
+      <S.TaskContainer
         key={task._id}
         onClick={() => navigate(`/board/${boardId}/tasks/${task._id}`)}
       >
-        <TopContainer>
-          <TaskTitle>{task.title}</TaskTitle>
-          <IconWrapper>
+        <S.TopContainer>
+          <S.TaskTitle>{task.title}</S.TaskTitle>
+          <S.IconWrapper>
             <FontAwesomeIcon
               icon={faFlag}
               style={{
@@ -52,18 +44,18 @@ const Task = ({ tasks, refetch }) => {
               }}
             />
             <ChoiceList taskId={task._id} refetch={refetch} />
-          </IconWrapper>
-        </TopContainer>
-        <BotContainer>
-          <DateBox>{task.date}</DateBox>
-        </BotContainer>
-        <CircleBox>
+          </S.IconWrapper>
+        </S.TopContainer>
+        <div>
+          <S.DateBox>{task.date}</S.DateBox>
+        </div>
+        <S.CircleBox>
           <CircleProBar
             allNum={task.subtasks.length}
             numOfDone={numOfDoneSubTasks()}
           />
-        </CircleBox>
-      </TaskContainer>
+        </S.CircleBox>
+      </S.TaskContainer>
     );
   });
 };

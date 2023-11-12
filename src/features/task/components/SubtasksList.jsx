@@ -30,8 +30,8 @@ const SubtasksList = ({ subtasks }) => {
 
     if (Object.values(subtasksList).some((value) => value)) {
       const newTimeoutId = setTimeout(() => {
-        handleUpdateMonthGoals();
-      }, 2000);
+        handleUpdateSubtasks();
+      }, 1500);
       setTimeoutId(newTimeoutId);
     }
   }, [subtasksList]);
@@ -47,7 +47,7 @@ const SubtasksList = ({ subtasks }) => {
     console.log(subtasksList);
   };
 
-  const handleUpdateMonthGoals = async () => {
+  const handleUpdateSubtasks = async () => {
     const subtasksToUpdate = subtasksList.map((item) => ({
       title: item.title,
       completed: item.completed,
@@ -135,6 +135,7 @@ const ListContainer = styled.div`
   width: 80%;
   height: 400px;
   overflow-y: auto;
+  overflow-x: hidden;
 `;
 
 const SubList = styled.ul`

@@ -2,19 +2,9 @@ import React, { useEffect } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 import { faRightFromBracket, faUser } from "@fortawesome/free-solid-svg-icons";
-import {
-  BotWrapper,
-  BottomContainer,
-  Delete,
-  DeleteBox,
-  Email,
-  Line,
-  LogoutBox,
-  Name,
-  NameBox,
-} from "./MenuStyle";
+import { S } from "./MenuStyle";
 
-import { useNavigate, Link, useLocation } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 
 import { useSendLogoutMutation } from "../../features/auth/authApiSlice";
 import { useDeleteUserMutation } from "../../features/users/usersApiSlice";
@@ -50,27 +40,27 @@ const Logout = () => {
   if (isError) return <p>Error: {error.data?.message}</p>;
 
   const content = (
-    <BottomContainer>
-      <BotWrapper>
-        <Line />
-        <LogoutBox>
-          <NameBox>
-            <Name>{username}</Name>
-            <Email>{email}</Email>
-            <DeleteBox onClick={deleteUserAndData}>
+    <S.BottomContainer>
+      <S.BotWrapper>
+        <S.Line />
+        <S.LogoutBox>
+          <S.NameBox>
+            <S.Name>{username}</S.Name>
+            <S.Email>{email}</S.Email>
+            <S.DeleteBox onClick={deleteUserAndData}>
               <FontAwesomeIcon icon={faUser} />
-              <Delete>Delete account</Delete>
-            </DeleteBox>
-          </NameBox>
+              <span>Delete account</span>
+            </S.DeleteBox>
+          </S.NameBox>
           <FontAwesomeIcon
             style={{ cursor: "pointer" }}
             icon={faRightFromBracket}
             onClick={onLogoutClicked}
             size="lg"
           />
-        </LogoutBox>
-      </BotWrapper>
-    </BottomContainer>
+        </S.LogoutBox>
+      </S.BotWrapper>
+    </S.BottomContainer>
   );
   return content;
 };

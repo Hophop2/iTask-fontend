@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import Bckg from "../../components/background/Bckg";
-import { SignWrapper } from "../../components/background/bckgStyle";
-import Header from "../../components/logreg/Header";
+
+import Header from "../../components/sign in/Header";
 import Input from "../../components/inputs/Input";
 import styled from "styled-components";
 import Select from "../../components/inputs/Select";
@@ -13,7 +13,8 @@ import { useAddNewTaskMutation } from "./taskApiSlice";
 import { useNavigate, useParams } from "react-router";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faChevronLeft } from "@fortawesome/free-solid-svg-icons";
-import { Link } from "react-router-dom";
+
+import toast from "react-hot-toast";
 const AddNewTask = () => {
   const statusOptions = ["To Do", "In Progress", "Done"];
   const { boardId } = useParams();
@@ -78,6 +79,19 @@ const AddNewTask = () => {
     }-${currentDate.getFullYear()}`;
 
     const { title, context, status, priority } = taskData;
+
+    const subTitleLength = subtasksList.some(
+      (subtask) => subtask.title.length > 40
+    );
+
+    if (subTitleLength) {
+      toast.error("Maximum 40 characters allowed to subtask!");
+      return;
+    }
+    if (title.length > 25) {
+      toast.error("Maximum 25 characters allowed to title!");
+      return;
+    }
     await addNewTask({
       title,
       context,
@@ -90,7 +104,7 @@ const AddNewTask = () => {
   };
 
   return (
-    <Bckg>
+    <Bckg logheight={"100vh"}>
       <SignWrapper>
         <LogForm onSubmit={sendNewTask}>
           <Container>
@@ -184,4 +198,11 @@ const AddButton = styled.button`
   @media (max-width: 850px) {
     border: 2px solid black;
   }
+`;
+const SignWrapper = styled.div`
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 `;
