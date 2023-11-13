@@ -22,50 +22,44 @@
 </p>
 
 ## Project Overview 🎉
-<p style="text-align: justify;">This project I created by my curiosity about how works AI tools like image generator or chat. My main goals were to increase my skills in typescript, connections between client-server components, better and efficiently handling loading, error states than in my previous project - iTask. As I was going deeper into the project, I realized new things to learn or improve. The hardest part of this project were handling streaming Api responses and functionality of sending messages 
-and how many different things can happen during this. This project caused a huge improve in my skills especially in what I mentioned above and give me idea for the next project that will be more challenging than iTools.</p>
+<p style="text-align: center;">iTask is my first meaningful project. The main goal was to increase my skills in creating REST APIs, understanding how an authentication system works, and managing CRUD actions on the frontend. This project improved my React skills and taught me how to work with Redux. Throughout the project, I face some issues, but none of them were too big. The next project that will further increase my skills is <a href='https://github.com/HubeertC/iTools.git'>iTools</a></p>
 
 
 
-**iTools** is a project involving authentication that relies on two AI-based tools. 
+**iTask** is a project with an authentication system where every user can create their own boards and tasks, each with different properties. The app dashboard includes a monthly goals component, user task statistics, an important task slider, and weather component, allowing users to check the current weather for a larger city.
 
-**AIReader** - allows you to upload PDF file by dropzone and after that chat with it to gain a specific information from your PDF. Files and messages are stored for every user. Chat uses a infinite message history on scroll.
 
-**AImage** - generate a image according to your vision by your command, after that u can add photo to your invidual carousel collection or discard. Every saved image is stored and you can dowloand it
 
 ## Features 
 
-- Authentication using Kinde
-- Streaming API Responses in Real-Time
-- Infinite Message Loading
-- Data Fetching Using tRPC & Zod
-- Functional PDF Viewer
-- storing files and images
-- chatting with PDF
-- generating images by prompt
-- handled loading,error states
-- drag and drop uploads
+- Rest API handling with Redux Toolkit
+- Authentication System
+- CRUD functions
+- task and board managment
+- MongoDB integration
+- component for checking the weather (for larger cities)
+- User tasks statistic
+
 
 ## Tech/framework used 🔧
 
 | Main Tech                                                    | Description                              |
 | ------------------------------------------------------- | ---------------------------------------- |
-| [React](https://nextjs.org)                           | Framework for React   |
-| [Javascript](https://www.typescriptlang.org)                           | Extension of JavaScript   |
-| [Redux Toolkit](https://trpc.io)                           | Tool for creating strongly-typed APIs in TypeScript, enabling communication between the client and the server   |
-| [Express](https://kinde.com)                           |  Authentication tool  |
-| [Nodejs](https://www.prisma.io)                           | Object-Relational Mapping (ORM)   |
-| [Styled-Components](https://js.langchain.com/docs/guides/deployment/nextjs)                           | Infinite AI Memory  |
-| [MongoDB](https://platform.openai.com/docs/introduction)                           |  Platform for working with artificial intelligence, enabling the use of advanced language models and other AI features.   |
-| [cors](https://uploadthing.com)                           | Adds the capability of file uploads to the application  |
-| [jsonwebtoken](https://www.pinecone.io)                           | Service for vector storage  |
-| [axios](https://www.pinecone.io)                           | Service for vector storage  |
+| [React](https://react.dev)                           | JavaScript library   |
+| Javascript                          |  JavaScript   |
+| [Redux Toolkit](https://redux-toolkit.js.org)                           |Toolset for efficient Redux   |
+| [Express](https://expressjs.com)                           | Minimal Node.js web framework with powerful features like routing and middleware  |
+| [Nodejs](https://nodejs.org/en)                           | JavaScript runtime for server-side development. Non-blocking, scalable, event-driven architecture.   |
+| [Styled-Components](https://styled-components.com)                           |  CSS-in-JS solution for React  |
+| [MongoDB](https://www.mongodb.com)                           | NoSQL database, document-oriented   |
+| [axios](https://axios-http.com/docs/intro)                           | Promise-based HTTP client for browsers and Node.js |
 
         
 | and other packages |  |  
 |-----------|:-----------:| 
 | cookie-parser | bcrypt |  
 |framer-motion  | react-hot-toster |  
+| cors   | jsonwebtoken |
 
 
    
@@ -96,7 +90,7 @@ and how many different things can happen during this. This project caused a huge
 
 To get started, run this command
 ````
-https://github.com/Hophop2/iTools.git
+git clone https://github.com/Hophop2/iTools.git
 ````
 after that u will be need a .env file with:
 ````
