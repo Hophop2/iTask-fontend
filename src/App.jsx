@@ -16,7 +16,7 @@ import BoardPage from "./pages/BoardPage";
 import AddNewTask from "./features/task/AddNewTask";
 import TaskInfo from "./features/task/TaskInfo";
 import EditTask from "./features/task/EditTask";
-import AppLayout from "./layouts/appLayout";
+import AppLayout from "./layouts/AppLayout";
 
 function App() {
   const router = createBrowserRouter(
