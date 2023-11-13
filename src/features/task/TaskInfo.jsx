@@ -1,7 +1,6 @@
 import React from "react";
 import { Container } from "./TaskInfoStyle";
 
-import Bckg from "../../components/background/Bckg";
 import { useParams } from "react-router";
 import { useGetTaskByIdQuery } from "./taskApiSlice";
 import Loading from "../../components/Loading";
