@@ -1,18 +1,16 @@
 import React from "react";
 import Bckg from "../components/background/Bckg";
-import Menu from "../components/nav/Menu";
+import Menu from "../components/nav/Nav";
 import DashBoard from "../features/dashboard/DashBoard";
 import styled from "styled-components";
 import useTitle from "../hooks/useTitle";
 const MainPage = () => {
   useTitle("Dashboard");
   return (
-    <Bckg>
-      <S.MainWrapper>
-        <Menu activeNum={2} />
-        <DashBoard />
-      </S.MainWrapper>
-    </Bckg>
+    <S.MainWrapper>
+      <Menu activeNum={2} />
+      <DashBoard />
+    </S.MainWrapper>
   );
 };
 
@@ -21,9 +19,12 @@ const S = {
   MainWrapper: styled.div`
     width: 100%;
 
-    min-height: 95vh;
+    height: 95vh;
     display: flex;
     justify-content: center;
     align-items: center;
+    @media (max-width: 970px) {
+      height: 100%;
+    }
   `,
 };

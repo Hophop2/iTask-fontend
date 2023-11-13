@@ -16,6 +16,7 @@ import BoardPage from "./pages/BoardPage";
 import AddNewTask from "./features/task/AddNewTask";
 import TaskInfo from "./features/task/TaskInfo";
 import EditTask from "./features/task/EditTask";
+import AppLayout from "./layouts/appLayout";
 
 function App() {
   const router = createBrowserRouter(
@@ -26,15 +27,17 @@ function App() {
 
         <Route element={<PersistLogin />}>
           <Route element={<Prefetch />}>
-            <Route path="dash">
-              <Route index element={<MainPage />} />
-            </Route>
-            <Route path="board/:boardId">
-              <Route index element={<BoardPage />} />
-              <Route path="add" element={<AddNewTask />} />
+            <Route element={<AppLayout />}>
+              <Route path="dash">
+                <Route index element={<MainPage />} />
+              </Route>
+              <Route path="board/:boardId">
+                <Route index element={<BoardPage />} />
+                <Route path="add" element={<AddNewTask />} />
 
-              <Route path="tasks/:taskId" element={<TaskInfo />} />
-              <Route path="edit/:taskId" element={<EditTask />} />
+                <Route path="tasks/:taskId" element={<TaskInfo />} />
+                <Route path="edit/:taskId" element={<EditTask />} />
+              </Route>
             </Route>
           </Route>
         </Route>

@@ -31,7 +31,7 @@ const Board = () => {
     refetchOnMountOrArgChange: true,
     refetchOnSuccess: true,
   });
-  if (isLoading) return <Loading wrapHeight={"100%"} />;
+  if (isLoading) return <Loading wrapHeight={"100vh"} />;
   if (isError || error) return <ErorrPage error={error} />;
 
   const taskList = tasks.ids.map((id) => {

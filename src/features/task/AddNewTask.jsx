@@ -104,43 +104,41 @@ const AddNewTask = () => {
   };
 
   return (
-    <Bckg logheight={"100vh"}>
-      <SignWrapper>
-        <LogForm onSubmit={sendNewTask}>
-          <Container>
-            <Header text={"Create your task"} />
-            <Input
-              name={`title`}
-              type={"text"}
-              placeholder={"Title"}
-              onChange={(e) => onTaskDataChanged(e)}
-            />
-            <Textarea
-              name={`context`}
-              type={"text"}
-              placeholder={"Context"}
-              onChange={(e) => onTaskDataChanged(e)}
-            />
-            <AddSubtasks
-              onSubtasksChanged={onSubtasksChanged}
-              setSubtasksList={setSubtasksList}
-              subtasksList={subtasksList}
-            />
+    <SignWrapper>
+      <LogForm onSubmit={sendNewTask}>
+        <Container>
+          <Header text={"Create your task"} />
+          <Input
+            name={`title`}
+            type={"text"}
+            placeholder={"Title"}
+            onChange={(e) => onTaskDataChanged(e)}
+          />
+          <Textarea
+            name={`context`}
+            type={"text"}
+            placeholder={"Context"}
+            onChange={(e) => onTaskDataChanged(e)}
+          />
+          <AddSubtasks
+            onSubtasksChanged={onSubtasksChanged}
+            setSubtasksList={setSubtasksList}
+            subtasksList={subtasksList}
+          />
 
-            <Select
-              options={statusOptions}
-              setTaskData={setTaskData}
-              taskData={taskData}
-            />
-            <PriorityBtns setTaskData={setTaskData} taskData={taskData} />
-          </Container>
-          <AddButton>Create</AddButton>
-          <BackLink onClick={() => navigate(-1)}>
-            <FontAwesomeIcon icon={faChevronLeft} />
-          </BackLink>
-        </LogForm>
-      </SignWrapper>
-    </Bckg>
+          <Select
+            options={statusOptions}
+            setTaskData={setTaskData}
+            taskData={taskData}
+          />
+          <PriorityBtns setTaskData={setTaskData} taskData={taskData} />
+        </Container>
+        <AddButton>Create</AddButton>
+        <BackLink onClick={() => navigate(-1)}>
+          <FontAwesomeIcon icon={faChevronLeft} />
+        </BackLink>
+      </LogForm>
+    </SignWrapper>
   );
 };
 

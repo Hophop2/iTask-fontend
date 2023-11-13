@@ -29,18 +29,14 @@ const TaskInfo = () => {
   if (isError || error) return <ErorrPage error={error} />;
 
   return (
-    <Bckg>
-      <Container>
-        {singleTaskData &&
-          singleTaskData.ids.map((id) => {
-            const entity = singleTaskData.entities[id];
+    <Container>
+      {singleTaskData &&
+        singleTaskData.ids.map((id) => {
+          const entity = singleTaskData.entities[id];
 
-            return (
-              <CurrentTaskInfo key={id} entity={entity} refetch={refetch} />
-            );
-          })}
-      </Container>
-    </Bckg>
+          return <CurrentTaskInfo key={id} entity={entity} refetch={refetch} />;
+        })}
+    </Container>
   );
 };
 

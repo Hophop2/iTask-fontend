@@ -1,21 +1,21 @@
 import React from "react";
 import styled from "styled-components";
-import ListMenu from "./ListMenu";
+import ListNav from "./ListNav";
 import Logout from "./Logout";
 
-const Menu = ({ activeNum }) => {
+const Nav = ({ activeNum }) => {
   return (
     <S.Container>
       <S.Wrapper>
         <S.Logo>iTask</S.Logo>
-        <ListMenu activeNum={activeNum} />
+        <ListNav activeNum={activeNum} />
         <Logout />
       </S.Wrapper>
     </S.Container>
   );
 };
 
-export default Menu;
+export default Nav;
 
 const S = {
   Container: styled.div`

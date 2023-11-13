@@ -13,7 +13,6 @@ import EditSubtasksList from "./components/EditSubtasksList";
 
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faFlag, faXmark } from "@fortawesome/free-solid-svg-icons";
-import Bckg from "../../components/background/Bckg";
 import { useNavigate, useParams } from "react-router";
 import { useGetTaskByIdQuery, useUpdateTaskMutation } from "./taskApiSlice";
 import Loading from "../../components/Loading";
@@ -105,68 +104,66 @@ const EditTask = () => {
   if (isError) return <ErorrPage error={error} />;
 
   return (
-    <Bckg>
-      <Container>
-        <FormBox onSubmit={sendUpdateTask}>
-          <LeftSideBox>
-            <CompletedBox>
-              <FontAwesomeIcon
-                style={{
-                  color: "white",
-                  fontSize: "1.7rem",
-                  cursor: "pointer",
-                }}
-                icon={faXmark}
-                onClick={() => navigate(-1)}
-              />
-              <Completed
-                style={{
-                  cursor: "pointer",
-                }}
-                onClick={() => toggleProperty(statusArray)}
-              >
-                {taskData.status}
-              </Completed>
+    <Container>
+      <FormBox onSubmit={sendUpdateTask}>
+        <LeftSideBox>
+          <CompletedBox>
+            <FontAwesomeIcon
+              style={{
+                color: "white",
+                fontSize: "1.7rem",
+                cursor: "pointer",
+              }}
+              icon={faXmark}
+              onClick={() => navigate(-1)}
+            />
+            <Completed
+              style={{
+                cursor: "pointer",
+              }}
+              onClick={() => toggleProperty(statusArray)}
+            >
+              {taskData.status}
+            </Completed>
 
-              <FontAwesomeIcon
-                onClick={() => toggleProperty(priorityArray)}
-                icon={faFlag}
-                style={{
-                  color:
-                    taskData.priority === "High"
-                      ? "red"
-                      : taskData.priority === "Normal"
-                      ? "orange"
-                      : "white",
-                  cursor: "pointer",
-                }}
-              />
-            </CompletedBox>
-            <InfoWrapper>
-              <Input
-                placeholder={taskData.title}
-                name={"title"}
-                onChange={(e) => onChangeText(e)}
-                value={taskData.title}
-              />
-              <EditTextarea
-                value={taskData.context}
-                onChange={(e) => onChangeText(e)}
-                name="context"
-              />
-            </InfoWrapper>
-            <Date>{taskData.date}</Date>
-          </LeftSideBox>
+            <FontAwesomeIcon
+              onClick={() => toggleProperty(priorityArray)}
+              icon={faFlag}
+              style={{
+                color:
+                  taskData.priority === "High"
+                    ? "red"
+                    : taskData.priority === "Normal"
+                    ? "orange"
+                    : "white",
+                cursor: "pointer",
+              }}
+            />
+          </CompletedBox>
+          <InfoWrapper>
+            <Input
+              placeholder={taskData.title}
+              name={"title"}
+              onChange={(e) => onChangeText(e)}
+              value={taskData.title}
+            />
+            <EditTextarea
+              value={taskData.context}
+              onChange={(e) => onChangeText(e)}
+              name="context"
+            />
+          </InfoWrapper>
+          <Date>{taskData.date}</Date>
+        </LeftSideBox>
 
-          <Line />
+        <Line />
 
-          <RightSideBox>
-            <EditSubtasksList setTaskData={setTaskData} taskData={taskData} />
-            <EditBtn>Edit Task</EditBtn>
-          </RightSideBox>
-        </FormBox>
-      </Container>
-    </Bckg>
+        <RightSideBox>
+          <EditSubtasksList setTaskData={setTaskData} taskData={taskData} />
+          <EditBtn>Edit Task</EditBtn>
+        </RightSideBox>
+      </FormBox>
+    </Container>
   );
 };
 

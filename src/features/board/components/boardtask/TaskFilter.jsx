@@ -18,7 +18,7 @@ export default TaskFilter;
 const S = {
   Container: styled.div`
     width: 320px;
-    height: 80vh;
+    min-height: 100%;
     border-radius: 0.625rem;
     background: rgba(255, 255, 255, 0.6);
     padding-top: 10px;

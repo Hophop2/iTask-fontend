@@ -8,7 +8,7 @@ import { useNavigate } from "react-router";
 import { Link } from "react-router-dom";
 import styled from "styled-components";
 
-const ListMenu = ({ activeNum }) => {
+const ListNav = ({ activeNum }) => {
   const [isActive, setIsActive] = useState(activeNum);
   const [activeAddBoard, setActiveAddBoard] = useState(false);
   const navigate = useNavigate();
@@ -17,15 +17,15 @@ const ListMenu = ({ activeNum }) => {
       setIsActive(i);
       navigate(toNavigate);
     } else {
-      setIsActive(2);
+      setIsActive(i);
     }
   };
 
-  const handleActiveAddBoard = () => {
+  const handleActiveAddBoard = (i) => {
     setActiveAddBoard((prev) => !prev);
-    handleLiActive(2);
-    console.log(activeAddBoard);
+    handleLiActive(i);
   };
+
   return (
     <>
       <S.ListContainer>
@@ -59,13 +59,16 @@ const ListMenu = ({ activeNum }) => {
       </S.ListContainer>
 
       {activeAddBoard ? (
-        <AddNewBoard handleActiveAddBoard={handleActiveAddBoard} />
+        <AddNewBoard
+          handleActiveAddBoard={handleActiveAddBoard}
+          activeNum={activeNum}
+        />
       ) : null}
     </>
   );
 };
 
-export default ListMenu;
+export default ListNav;
 
 const S = {
   ListContainer: styled.div`

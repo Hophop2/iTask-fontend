@@ -6,7 +6,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faXmark } from "@fortawesome/free-solid-svg-icons";
 import useAuth from "../../../hooks/useAuth";
 import toast from "react-hot-toast";
-const AddNewBoard = ({ handleActiveAddBoard }) => {
+const AddNewBoard = ({ handleActiveAddBoard, activeNum }) => {
   const { userId } = useAuth();
   const [boardName, setBoardName] = useState("");
   const [displayError, setDisplayError] = useState(false);
@@ -46,7 +46,9 @@ const AddNewBoard = ({ handleActiveAddBoard }) => {
         <FontAwesomeIcon
           icon={faXmark}
           style={iconStyle}
-          onClick={() => handleActiveAddBoard()}
+          onClick={() => {
+            handleActiveAddBoard(activeNum);
+          }}
         />
         <S.Title>Add a new board!</S.Title>
 

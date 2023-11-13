@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 
 export const BoardContainer = styled.div`
   width: 100%;
-  height: 90vh;
+  height: 50rem;
 
   display: flex;
   flex-direction: column;

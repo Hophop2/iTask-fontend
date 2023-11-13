@@ -5,11 +5,9 @@ import TaskInfo from "../features/task/TaskInfo";
 
 const TaskPage = () => {
   return (
-    <Bckg logheight={"100vh"}>
-      <S.Container>
-        <TaskInfo />
-      </S.Container>
-    </Bckg>
+    <S.Container>
+      <TaskInfo />
+    </S.Container>
   );
 };
 
