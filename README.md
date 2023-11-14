@@ -5,7 +5,7 @@
 
 
  <h1  align="center">
- iTools
+ iTask
 
 
 </h1>
@@ -15,8 +15,8 @@
 <p align="center"><a href='https://i-task.vercel.app'>iTask</a></p>
 
 <p align="center">
-  <a >
-    <img src=""
+  <a href='https://i-task.vercel.app'>
+    <img src="https://github.com/HubeertC/iTask-frontend/assets/85635245/33c0923b-1f7b-469b-8666-d7c7dd61b123"
          alt="Screenshot">
   </a>
 </p>
@@ -72,16 +72,36 @@
 ## Screenshots 📺
 
 <p align="center">
-    <img src="" alt="Screenshot">
+<img src="https://github.com/HubeertC/iTask-frontend/assets/85635245/9fc86045-c71a-4b04-a04e-f45dc4c7b6f1" alt="Screenshot">
+   
+</p>
+
+
+<p align="center">
+    <img src="https://github.com/HubeertC/iTask-frontend/assets/85635245/da38eac9-afbd-47d3-98f9-f3e7eedef58d" alt="Screenshot">
+</p>
+
+
+
+
+
+<p align="center">
+    <img src="https://github.com/HubeertC/iTask-frontend/assets/85635245/33c0923b-1f7b-469b-8666-d7c7dd61b123" alt="Screenshot">
 </p>
 
 <p align="center">
-    <img src="" alt="Screenshot">
+    <img src="https://github.com/HubeertC/iTask-frontend/assets/85635245/779d8715-ba82-48ff-9ac6-b7d25d0684be" alt="Screenshot">
 </p>
 
 <p align="center">
-    <img src="" alt="Screenshot">
+    <img src="https://github.com/HubeertC/iTask-frontend/assets/85635245/24aa93c9-d3b5-4c98-9c7d-a94d13b94284" alt="Screenshot">
 </p>
+
+<p align="center">
+    <img src="https://github.com/HubeertC/iTask-frontend/assets/85635245/f71fd9c7-4af2-4d4d-9904-54f360d4c585" alt="Screenshot">
+</p>
+
+
 
 
 
@@ -109,4 +129,9 @@ UPLOADTHING_APP_ID
 PINECONE_API_KEY
 
 OPENAI_API_KEY
+````
+
+and at the end run this in project file:
+````
+npm install
 ````
