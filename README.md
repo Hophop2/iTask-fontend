@@ -12,7 +12,7 @@
 
 ## Live 📍
 
-<p align="center"><a href='https://i-task.vercel.app'>iTask</a></p>
+<p >Link to:<a href='https://i-task.vercel.app'> iTask</a></p>
 
 <p align="center">
   <a href='https://i-task.vercel.app'>
@@ -112,26 +112,27 @@ To get started, run this command
 ````
 git clone https://github.com/HubeertC/iTask-frontend.git
 ````
-after that u will be need a .env file with:
+
+and for backend:
 ````
-KINDE_CLIENT_ID
-KINDE_CLIENT_SECRET
-KINDE_ISSUER_URL
-KINDE_SITE_UR
-KINDE_POST_LOGOUT_REDIRECT_URL
-KINDE_POST_LOGIN_REDIRECT_URL
-
-DATABASE_URL
-
-UPLOADTHING_SECRET
-UPLOADTHING_APP_ID
-
-PINECONE_API_KEY
-
-OPENAI_API_KEY
+git clone https://github.com/HubeertC/iTask-api.git
+````
+after that u will be need a .env file in backend with:
+````
+DATABASE_URI - mongoDB
+ACCESS_TOKEN_SECRET - jwt token
+REFRESH_TOKEN_SECRET - resfresh token
+WEATHER_APIKEY 
+X_RapidAPI_Key 
 ````
 
-and at the end run this in project file:
+every enviroments u can get from these links:
+- [MongoDB](https://www.mongodb.com)
+- [Geo city api](https://rapidapi.com/wirefreethought/api/geodb-cities/)
+- [Weather api](https://openweathermap.org/api)
+
+
+and at the end run this in frontend and backend file:
 ````
 npm install
 ````
