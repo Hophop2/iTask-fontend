@@ -110,7 +110,7 @@
 
 To get started, run this command
 ````
-git clone https://github.com/Hophop2/iTools.git
+git clone https://github.com/HubeertC/iTask-frontend.git
 ````
 after that u will be need a .env file with:
 ````
