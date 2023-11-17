@@ -58,11 +58,11 @@ const EditMonthGoals = ({ monthGoals, handleOptionSelect, refetch }) => {
       completed: item.completed,
     }));
 
-    refetch();
     if (goalsToUpdate.length === 0) {
       handleOptionSelect("");
     } else {
       await UpdateMonthGoal(goalsToUpdate);
+      refetch();
       handleOptionSelect("list");
     }
   };
