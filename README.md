@@ -39,6 +39,7 @@
 - MongoDB integration
 - component for checking the weather (for larger cities)
 - User tasks statistic
+- jsonwebtoken
 
 
 ## Tech/framework used 🔧
@@ -50,6 +51,7 @@
 | [Redux Toolkit](https://redux-toolkit.js.org)                           |Toolset for efficient Redux   |
 | [Express](https://expressjs.com)                           | Minimal Node.js web framework with powerful features like routing and middleware  |
 | [Nodejs](https://nodejs.org/en)                           | JavaScript runtime for server-side development. Non-blocking, scalable, event-driven architecture.   |
+| [jsonwebtoken](https://jwt.io)                           | JavaScript library for creating and verifying JSON Web Tokens (JWT) used in web development for secure authentication and authorization |
 | [Styled-Components](https://styled-components.com)                           |  CSS-in-JS solution for React  |
 | [MongoDB](https://www.mongodb.com)                           | NoSQL database, document-oriented   |
 | [axios](https://axios-http.com/docs/intro)                           | Promise-based HTTP client for browsers and Node.js |
@@ -59,7 +61,7 @@
 |-----------|:-----------:| 
 | cookie-parser | bcrypt |  
 |framer-motion  | react-hot-toster |  
-| cors   | jsonwebtoken |
+| cors   |  |
 
 
    
