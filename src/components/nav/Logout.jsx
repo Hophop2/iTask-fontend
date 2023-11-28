@@ -9,7 +9,6 @@ import { useNavigate } from "react-router-dom";
 import { useSendLogoutMutation } from "../../features/auth/authApiSlice";
 import { useDeleteUserMutation } from "../../features/users/usersApiSlice";
 import useAuth from "../../hooks/useAuth";
-import toast from "react-hot-toast";
 
 const Logout = () => {
   const navigate = useNavigate();
@@ -19,8 +18,7 @@ const Logout = () => {
   const [sendLogout, { isLoading, isSuccess, isError, error }] =
     useSendLogoutMutation();
 
-  const [deleteUser, { isSuccess: deleteUserSuccess }] =
-    useDeleteUserMutation();
+  const [deleteUser] = useDeleteUserMutation();
 
   useEffect(() => {
     if (isSuccess) {
