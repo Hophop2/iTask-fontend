@@ -56,11 +56,11 @@ const LoginPage = () => {
       });
       navigate("/dash");
     } catch (err) {
-      console.log(err);
       if (!err.status) {
         toast.error("No server Response");
       } else {
-        toast.error(err.data?.message);
+        console.log(err);
+        toast.error(err.data.message);
       }
     }
   };

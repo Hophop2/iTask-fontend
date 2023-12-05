@@ -8,8 +8,6 @@ export const urgentTasksApiSlice = apiSlice.injectEndpoints({
         return response.status === 200 && !result.isError;
       },
       transformResponse: (responseData) => {
-        console.log("Response Data urgent tasks:", responseData);
-
         return responseData;
       },
       providesTags: ["Tasks"],

@@ -8,7 +8,7 @@ const SearchWeather = ({ onSearchChange }) => {
 
   const loadOptions = async (inputValue) => {
     const response = await fetch(
-      `http://localhost:3500/weather/search?search=${inputValue}`
+      `https://itask-api.onrender.com/weather/search?search=${inputValue}`
     );
     const response_1 = await response.json();
     return {
